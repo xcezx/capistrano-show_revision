@@ -1,0 +1,8 @@
+namespace :deploy do
+  desc 'Show released revision'
+  task :show_revision do
+    on roles(:all) do
+      execute :tail, '-n 1', revision_log
+    end
+  end
+end
